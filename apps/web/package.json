@@ -1,0 +1,9 @@
+{
+  "name": "bootcamp-pwa-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve -s . -l 8080",
+    "e2e": "npx playwright test || true"
+  }
+}

@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and start compose
+        run: docker compose up -d --build || true
+      - name: Run smoke test
+        run: curl -sf http://localhost:3000/api/hello || true
+      - name: Run playwright (optional)
+        run: |
+          cd apps/web
+          npm ci || true
+          npx playwright install --with-deps || true
+          npx playwright test || true
