@@ -44,10 +44,11 @@ Este projeto é uma aplicação completa composta por:
 
 ```bash
 docker-compose up --build
-PWA: http://localhost:8080
 
-API: http://localhost:3000
 ```
+- PWA: http://localhost:8080
+
+- API: http://localhost:3000
 
 ## Executar Manualmente
 
